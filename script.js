@@ -30,7 +30,6 @@ function renderWeather(data) {
     windHTML.textContent = "Скорость ветра: " + speed.toFixed(1) + " м/с";
 
     cardWeather.classList.remove('start');
-    cardWeather.classList.remove('loading');
 }
 
 async function searchWeather (event) {
@@ -42,6 +41,7 @@ async function searchWeather (event) {
     } catch(err) {
         alert('Попробуйте ввести другое название');
     }
+    cardWeather.classList.remove('loading');
 }
 
 search.addEventListener('click', searchWeather);
